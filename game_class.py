@@ -21,6 +21,7 @@ from hand_class import Hand
 import deck_class
 from deck_class import Deck
 import reward_class
+from reward_class import compute_rewards
 
 import numpy as np
 from numpy import random
@@ -52,6 +53,10 @@ class Game():
     def show_starting_cards(self):
         print("Your starting hand:")
         self.hand.show_hand()
+
+    def show_final_cards(self):
+        print("Your final hand:")
+        self.hand.show_hand()
     
     def ask_to_replace_cards(self):
         print("Enter \'y\' to keep card and \'n\' to replace")
@@ -77,7 +82,7 @@ class Game():
                 print("### Error replacing cards: Received response not y/n when keeping card")
     
     def get_game_results(self):
-        pass
+        compute_rewards(self.hand)
     
     # Printing functions
     def show_deck(self):

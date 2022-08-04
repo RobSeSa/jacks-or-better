@@ -26,8 +26,8 @@ REWARDS = {
     'triple':3
     }
 
-print(int_to_card)
-print(card_to_int)
+#print(int_to_card)
+#print(card_to_int)
 
 def is_straight(hand):
     for i in range(len(hand)-1):
