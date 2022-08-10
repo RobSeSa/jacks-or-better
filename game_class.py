@@ -82,7 +82,7 @@ class Game():
                 print("### Error replacing cards: Received response not y/n when keeping card")
     
     def get_game_results(self):
-        compute_rewards(self.hand)
+        return compute_rewards(self.hand)
     
     # Printing functions
     def show_deck(self):
