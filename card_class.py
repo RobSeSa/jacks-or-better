@@ -35,6 +35,7 @@ class Card():
    
 if __name__ == "__main__":
     print("Testing Card class")
+    print("card_to_int:", card_to_int)
 
     for _ in range(5):
         x = random.randint(0, 52)
