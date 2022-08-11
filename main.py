@@ -1,17 +1,21 @@
 import gym
 from jacks_or_better_env import JacksOrBetterEnvironment
-from numpy import random
 
 env = JacksOrBetterEnvironment()
 
+obs = env.reset()
+env.render()
 i = 0
 while i < 10:
     print("#"*30, "\nStep:", i)
-    env.reset()
     env.render()
-    
-    action = random.randint(52)
-    env.step(action)
+    action = env.action_space.sample()
+    obs, reward, done, info = env.step(action)
     env.render()
 
+    if done:
+        obs = env.reset()
+
     i += 1
+
+env.close()
